@@ -1,93 +1,87 @@
 # Sonar Rock vs Mine Prediction using Machine Learning
 
-This project builds a Machine Learning model to classify sonar signals as either **Rock** or **Mine**. The model analyzes sonar signal patterns and predicts the type of object detected underwater.
+This project builds a machine learning model that predicts whether an object detected by SONAR is a **Rock** or a **Mine**.
 
-The project demonstrates the complete machine learning workflow including:
-
-- Data preprocessing
-- Model training
-- Model evaluation
-- Prediction system
+The model analyzes sonar signal patterns and classifies underwater objects using **Logistic Regression**.
 
 ---
 
-# Project Overview
+## Problem Statement
 
-Sonar (Sound Navigation and Ranging) is used to detect underwater objects. The signals reflected from objects can be analyzed to determine whether the object is a **rock** or a **mine**.
+SONAR (Sound Navigation and Ranging) systems are used to detect underwater objects. When sound waves hit an object, they bounce back and create signal patterns.
 
-This project uses a Machine Learning model to analyze sonar signal frequencies and classify the object type.
+By analyzing these signals, machine learning can determine whether the object is:
+
+- Rock
+- Mine
 
 ---
 
-# Dataset Information
+## Dataset
 
-The dataset used in this project is the **Sonar Dataset**.
+The dataset used in this project is the **Sonar Dataset from the UCI Machine Learning Repository**.
 
-Dataset Characteristics:
+Dataset details:
 
-- Total Features: 60
-- Feature Type: Numerical
-- Target Classes:
+- Instances: 208
+- Features: 60 numerical attributes
+- Target classes:
   - R → Rock
   - M → Mine
 
-Each record represents sonar signal readings bounced off an object.
+Each row represents sonar signal strength measurements reflected from objects.
 
 ---
 
-# Technologies Used
+## Technologies Used
 
 - Python
 - NumPy
 - Pandas
 - Scikit-learn
+- Jupyter Notebook
 - Google Colab
-- Machine Learning
 
 ---
 
-# Machine Learning Algorithm
+## Machine Learning Model
 
-The model uses **Logistic Regression** for classification.
+Algorithm used:
 
-Why Logistic Regression?
+Logistic Regression
 
-- Efficient for binary classification
-- Fast training time
-- Good baseline model for classification problems
+This algorithm is suitable for binary classification problems and provides efficient performance for structured numerical datasets.
 
 ---
 
-# Project Workflow
+## Project Workflow
 
-The project follows the standard machine learning pipeline:
-
-1. Importing required libraries
-2. Loading dataset
-3. Data exploration and analysis
+1. Import required libraries
+2. Load dataset
+3. Data exploration
 4. Data preprocessing
-5. Splitting training and testing data
-6. Training the machine learning model
-7. Evaluating model performance
-8. Building a predictive system
+5. Train-test split
+6. Model training
+7. Model evaluation
+8. Prediction system
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```
-sonar-rock-vs-mine/
+sonar-rock-vs-mine-prediction
 │
-├── dataset/
+├── dataset
 │   └── sonar_dataset.csv
 │
-├── model/
+├── model
 │   └── sonar_model.pkl
 │
-├── notebook/
-│   └── sonar_model_training.ipynb
+├── notebook
+│   └── sonar_rock_vs_mine.ipynb
 │
-├── src/
+├── src
 │   └── sonar_rock_vs_mine.py
 │
 ├── requirements.txt
@@ -97,49 +91,21 @@ sonar-rock-vs-mine/
 
 ---
 
-# Model Training
+## Installation
 
-The model is trained using the following steps:
-
-- Data split using `train_test_split`
-- Training using Logistic Regression
-- Evaluating accuracy using `accuracy_score`
-
-Training data accuracy and testing data accuracy are calculated to evaluate model performance.
-
----
-
-# Prediction System
-
-The system accepts **60 sonar signal values** as input and predicts whether the detected object is:
-
-- Rock
-- Mine
-
-Example prediction logic:
+Clone the repository
 
 ```
-If prediction = R → Rock
-If prediction = M → Mine
+git clone https://github.com/areebsatti-official/sonar-rock-vs-mine-prediction.git
 ```
 
----
-
-# Installation
-
-Clone the repository:
+Navigate to the project directory
 
 ```
-git clone https://github.com/yourusername/sonar-rock-vs-mine.git
+cd sonar-rock-vs-mine-prediction
 ```
 
-Navigate to the project directory:
-
-```
-cd sonar-rock-vs-mine
-```
-
-Install dependencies:
+Install required libraries
 
 ```
 pip install -r requirements.txt
@@ -147,44 +113,33 @@ pip install -r requirements.txt
 
 ---
 
-# Usage
+## Running the Project
 
-Run the prediction script:
+Run the python file
 
 ```
-python src/sonar_rock_vs_mine.py
+python sonar_rock_vs_mine.py
 ```
 
-The model will process sonar input signals and output the prediction.
+The system will take sonar signal input and predict whether the object is **Rock or Mine**.
 
 ---
 
-# Model Accuracy
+## Future Improvements
 
-The model performance is evaluated using accuracy score.
-
-Metrics calculated:
-
-- Training Accuracy
-- Testing Accuracy
-
----
-
-# Future Improvements
-
-Possible improvements for the project:
+Possible improvements include:
 
 - Deploy the model as a web application
 - Create REST API using Flask or FastAPI
-- Build a user-friendly web interface
-- Experiment with advanced models such as:
+- Build a graphical interface
+- Experiment with advanced algorithms like:
   - Random Forest
   - Support Vector Machine
   - Neural Networks
 
 ---
 
-# Author
+## Author
 
 Muhammad Areeb Satti  
 Software Engineering Student  
